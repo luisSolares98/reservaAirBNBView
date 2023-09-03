@@ -1,0 +1,79 @@
+{
+  "consumer": {
+    "name": "react-client"
+  },
+  "interactions": [
+    {
+      "description": "para crear una CheckIn",
+      "providerStates": [
+        {
+          "name": "crear CheckIn"
+        }
+      ],
+      "request": {
+        "body": {
+          "dateTimeCheckIn": "2022-03-11",
+          "reserveId": "f559cd0b-0320-409c-8705-4c1886fee8cb",
+          "typeCheckIn": "Digital"
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Content-Type": "application/json"
+        },
+        "method": "POST",
+        "path": "/checkIn/"
+      },
+      "response": {
+        "body": {
+          "checkInId": "cbeeff88-e224-44c5-b397-e5cce833df68",
+          "dateTimeCheckIn": "2022-03-11T00:00:00.000+00:00",
+          "reserveId": "f559cd0b-0320-409c-8705-4c1886fee8cb",
+          "typeCheckIn": "Digital"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "identificador",
+      "providerStates": [
+        {
+          "name": "realiza una busqueda"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/checkIn/cbeeff88-e224-44c5-b397-e5cce833df68"
+      },
+      "response": {
+        "body": {
+          "checkInId": "cbeeff88-e224-44c5-b397-e5cce833df68",
+          "dateTimeCheckIn": "2022-03-11T00:00:00.000+00:00",
+          "reserveId": "f559cd0b-0320-409c-8705-4c1886fee8cb",
+          "typeCheckIn": "Digital"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "12.1.0"
+    },
+    "pactRust": {
+      "ffi": "0.4.7",
+      "models": "1.1.9"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "checkIn-service"
+  }
+}

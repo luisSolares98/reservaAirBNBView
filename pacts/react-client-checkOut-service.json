@@ -1,0 +1,82 @@
+{
+  "consumer": {
+    "name": "react-client"
+  },
+  "interactions": [
+    {
+      "description": "para crear una CheckOut",
+      "providerStates": [
+        {
+          "name": "crear CheckOut"
+        }
+      ],
+      "request": {
+        "body": {
+          "dateTimeCheckOut": "2022-03-11",
+          "reserveId": "f559cd0b-0320-409c-8705-4c1886fee8cb",
+          "typeCheckOut": "fisica"
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Content-Type": "application/json"
+        },
+        "method": "POST",
+        "path": "/checkOut/"
+      },
+      "response": {
+        "body": {
+          "checkOutId": "0e9f36c5-8ad5-4f35-a2b2-b26ad4dabf15",
+          "dateTimeCheckOut": "2022-03-11T00:00:00.000+00:00",
+          "reserveId": "f559cd0b-0320-409c-8705-4c1886fee8cb",
+          "typeCheckOut": "fisica"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "identificador",
+      "providerStates": [
+        {
+          "name": "realiza una busqueda"
+        }
+      ],
+      "request": {
+        "headers": {
+          "Accept": "*/*"
+        },
+        "method": "GET",
+        "path": "/checkOut/0e9f36c5-8ad5-4f35-a2b2-b26ad4dabf15"
+      },
+      "response": {
+        "body": {
+          "checkOutId": "0e9f36c5-8ad5-4f35-a2b2-b26ad4dabf15",
+          "dateTimeCheckOut": "2022-03-11T00:00:00.000+00:00",
+          "reserveId": "f559cd0b-0320-409c-8705-4c1886fee8cb",
+          "typeCheckOut": "fisica"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "12.1.0"
+    },
+    "pactRust": {
+      "ffi": "0.4.7",
+      "models": "1.1.9"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "checkOut-service"
+  }
+}

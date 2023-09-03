@@ -1,0 +1,92 @@
+{
+  "consumer": {
+    "name": "react-client"
+  },
+  "interactions": [
+    {
+      "description": "para crear una Reserva",
+      "providerStates": [
+        {
+          "name": "crear Reserva"
+        }
+      ],
+      "request": {
+        "body": {
+          "dateIn": "2022-05-11",
+          "dateOut": "2022-05-20",
+          "state": "Realizada"
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Content-Type": "application/json"
+        },
+        "method": "POST",
+        "path": "/reserve/"
+      },
+      "response": {
+        "body": {
+          "dateIn": "2022-05-11T00:00:00.000+00:00",
+          "dateOut": "2022-05-20T00:00:00.000+00:00",
+          "reserveID": "f559cd0b-0320-409c-8705-4c1886fee8cb",
+          "state": "Realizada"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          },
+          "header": {}
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "identificador",
+      "providerStates": [
+        {
+          "name": "realiza una busqueda de una reserva"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/reserve/f559cd0b-0320-409c-8705-4c1886fee8cb"
+      },
+      "response": {
+        "body": {
+          "dateIn": "2022-05-11T00:00:00.000+00:00",
+          "dateOut": "2022-05-20T00:00:00.000+00:00",
+          "reserveID": "f559cd0b-0320-409c-8705-4c1886fee8cb",
+          "state": "Realizada"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "12.1.0"
+    },
+    "pactRust": {
+      "ffi": "0.4.7",
+      "models": "1.1.9"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "reserva-service"
+  }
+}
